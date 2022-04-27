@@ -1,9 +1,10 @@
 /// <reference types="Cypress" />
 
 describe("Test Contact Us form via WebdriverUni", () =>{
-    it("Should be able to submit a sucessessful submission via conatc us from", () => {
+    it.only("Should be able to submit a sucessessful submission via conatc us from", () => {
         
         cy.visit("http://www.webdriveruniversity.com/Contact-Us/contactus.html")
+        cy.document().should('have.property', 'charset').and('eq','UTF-8')
         //cy.get('#contact-us > .thumbnail').click({force: true})
         cy.get('[name="first_name"]').type("Innocent")
         cy.get('[name="last_name"]').type("Rathogwa")
